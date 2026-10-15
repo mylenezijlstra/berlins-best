@@ -78,21 +78,31 @@ onze opdracht.
 **Notulist: Sultan Avdi
 **Aanwezig: Sultan Avdi, Walid Sahil, Sebestiaan kuper
 **Wie doet welk onderdeel?
+
 Sultan Avdi:
 Onderdeel:
 Basisstructuur en layout
 Wat hoort erbij:
 HTML-structuur, responsive CSS, kleuren en lettertype uit het ontwerp
+
 Walid Salhi:
 Onderdeel:
 Route en kaart
 Wat hoort erbij:
 Routebeschrijving vanaf het hotel en de interactieve kaart
+
 Mylene Zijlstra:
 Onderdeel:
 Omschrijving en motivatie & Praktische informatie
 Wat hoort erbij:
 Teksten in eigen woorden, met bronnen & Adres, openingstijden en kosten
+
+Sebastiaan Kuper: 
+Onderdeel: 
+Slideshow
+Wat hoort erbij:
+Zelf geprogrammeerd in JavaScript
+
 **Hoe hebben we de afbeeldingen op elkaar afgestemd?**
 (stijl, kleur, verhouding, kwaliteit, past bij de locatie)
 **Stand-up: waar liepen we tegenaan, en wat hebben we afgesproken?**
