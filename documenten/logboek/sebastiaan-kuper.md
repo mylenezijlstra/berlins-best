@@ -35,5 +35,8 @@ Staat in documenten en dan groepsafspraken.
 - iedereen werkt nu in zijn eigen branch website/.
 
 ### Wat ging goed / wat was lastig
-- ging best goed alleen mylene niet aanwezig. 
+- ging best goed alleen mylene niet aanwezig.
+
+- ### website/
+- de apparte branch in aangemaakt (website/sebastiaan
 
