@@ -31,5 +31,6 @@ Voor het ontwerpen van ons eindproduct gebruiken de teamleden verschillende ontw
 * **[Walid Salhi]:** Figma Make
 * **[Mylene Zijlstra]:** Google Stitch  
 * **[Sultan Avdi]:** ChatGPT Canvas
+* * **[sebastiaan Kuper]:** figma 
 
 De definitieve taakverdeling wordt binnen het team afgestemd.
