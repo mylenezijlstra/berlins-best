@@ -25,10 +25,6 @@ Staat in documenten en dan groepsafspraken.
 
 ## Week [2] – [15-10-2026]
 
-### Groepsnaam kiezen
-- Iedereen stelde één naam voor: [namen noteren].
-- We kozen **[waar is de 4e?]** omdat [sebastiaan ziek was. Ik heb de naam niet bedacht].
-
 ### Teamafspraken
 Staat in documenten en dan groepsafspraken. 
 
