@@ -1,4 +1,4 @@
-# Logboek – [waar is de 4e?]
+# Logboek 
 
 **Teamleden:** [mylene], [sultan], [walid], [sebastiaan]
 **Hotel:** Generator Berlin Mitte, Oranienburger Straße 65, 10117 Berlijn
@@ -25,3 +25,7 @@ Staat in documenten en dan groepsafspraken.
 
 ### Individueel onderzoek (`onderzoek/mylenezijlstra.md`)
 - staat in documenten/onderzoek/mylenezijlstra.md 
+
+### design gemaakt 
+- stitch ai design gemaakt: https://stitch.google.com/projects/12814080654007016369?pli=1 
+
