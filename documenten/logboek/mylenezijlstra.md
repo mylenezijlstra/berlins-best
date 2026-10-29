@@ -35,4 +35,4 @@ Staat in documenten en dan groepsafspraken.
 
 ## Week [3] – [29-10-2026]
 - heb al mijn delen af en sebastiaan was niet aanwezig, dus heb het onderdeel wat sebastiaan moest doen gemaakt.
-Ik heb een slideshow met javascript, css en html gemaakt. Een basic slideshow die om de 3 seconden door gaat en je kan hem handmatig doorscrollen. Ook als je je muis op de foto houd blijft die stil. 
+Ik heb een slideshow met javascript, css en html gemaakt. Een basic slideshow die om de 3 seconden door gaat en je kan hem handmatig doorscrollen. Ook als je je muis op de foto houd blijft die stil.  
