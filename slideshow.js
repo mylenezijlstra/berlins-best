@@ -327,4 +327,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init
   updateUI();
   startProgress();
+
+  // ============================================================
+  // 3. GOOGLE MAPS WEERGAVE WISSELAAR (Walid Salhi)
+  // ============================================================
+  const mapFrame = document.getElementById('google-maps-frame');
+  const btnFeld = document.getElementById('btn-view-feld');
+  const btnSat = document.getElementById('btn-view-sat');
+
+  const MAP_VIEWS = {
+    feld: 'https://maps.google.com/maps?q=Tempelhofer%20Feld%2C%20Berlin&hl=nl&t=&z=14&ie=UTF8&iwloc=&output=embed',
+    satellite: 'https://maps.google.com/maps?q=Tempelhofer%20Feld%2C%20Berlin&hl=nl&t=k&z=15&ie=UTF8&iwloc=&output=embed'
+  };
+
+  function setMapView(viewKey, activeBtn) {
+    if (mapFrame && MAP_VIEWS[viewKey]) {
+      mapFrame.src = MAP_VIEWS[viewKey];
+    }
+    if (btnFeld && btnSat) {
+      btnFeld.classList.remove('active');
+      btnSat.classList.remove('active');
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+  }
+
+  if (btnFeld) {
+    btnFeld.addEventListener('click', () => setMapView('feld', btnFeld));
+  }
+
+  if (btnSat) {
+    btnSat.addEventListener('click', () => setMapView('satellite', btnSat));
+  }
 });

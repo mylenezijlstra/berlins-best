@@ -816,29 +816,97 @@ body {
   letter-spacing: -0.025em;
 }
 
-.map-box {
-  width: 100%;
-  height: 420px;
-  background-color: #e5e8db;
+.map-wrapper {
+  background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--text-muted);
-  background-image: 
-    linear-gradient(rgba(20, 59, 43, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 59, 43, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.map-box svg {
-  width: 48px;
-  height: 48px;
+.map-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+
+.map-bar-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--forest);
-  opacity: 0.6;
+}
+
+.map-toggle-group {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.toggle-btn {
+  background: #f0f3eb;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toggle-btn:hover {
+  color: var(--forest);
+  background: #e4eadc;
+}
+
+.toggle-btn.active {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #ffffff;
+}
+
+.iframe-holder {
+  width: 100%;
+  height: 440px;
+  background: #e2e8f0;
+}
+
+#google-maps-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.map-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--line);
+  background: #fafcf9;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.link-gmaps {
+  color: var(--forest);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link-gmaps:hover {
+  text-decoration: underline;
 }
 
 /* ============================================================
