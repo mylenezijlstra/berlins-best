@@ -23,3 +23,4 @@ dag 2: 15-10-2026
 Vandaag zijn we begonnen met een stand-up en taken verdeeld
 ik heb mijn taak afgemaakt. routes en map heb ik gemaakt.
 we gingen mergen en ging heel goed zonder conflicts ofzo.
+feedback gegeven aan mijn teamgenoten.
