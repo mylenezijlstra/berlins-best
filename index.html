@@ -3,131 +3,456 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Berlin's Best - Tempelhofer Feld</title>
+  <title>Tempelhofer Feld — Berlin's Best Field Guide</title>
+  <meta name="description" content="Tempelhofer Feld in Berlijn: een vliegveld als stadspark. Gids voor CSD-studenten met geschiedenis, praktische info, route en slideshow.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- ============================================================
+       SITE HEADER MET HAMBURGER MENU
+       ============================================================ -->
   <header class="site-header">
-    <div class="brand"></div>
-    <nav class="navigation"></nav>
-    <div class="header-action"></div>
+    <a href="#" class="brand">
+      <span class="brand-icon"></span>
+      <span>BERLIJN / BUITEN</span>
+    </a>
+
+    <!-- Desktop Navigatie -->
+    <nav class="navigation" aria-label="Hoofdnavigatie">
+      <a href="#veld">Het veld</a>
+      <a href="#csd">Voor CSD</a>
+      <a href="#beeld">In beeld</a>
+      <a href="#bezoek">Bezoek</a>
+      <a href="#route">Route</a>
+    </nav>
+
+    <div class="header-action">
+      <span>FIELD GUIDE · 2026</span>
+    </div>
+
+    <!-- Hamburger Knop voor Mobiel -->
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Menu openen of sluiten" aria-expanded="false">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
   </header>
 
+  <!-- Mobiel Navigatiemenu -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#veld">Het veld</a>
+    <a href="#csd">Voor CSD</a>
+    <a href="#beeld">In beeld</a>
+    <a href="#bezoek">Bezoek</a>
+    <a href="#route">Route</a>
+  </div>
+
   <main>
-    <!-- Hero sectie met de interactieve slideshow -->
+    <!-- ============================================================
+         HERO SECTIE
+         ============================================================ -->
     <section class="hero">
-      <div class="slideshow-wrapper">
-        
-        <!-- Viewport met foto's en navigatieknoppen -->
-        <div class="slideshow-viewport" id="slideshow-viewport">
-          <div class="slideshow-track" id="slideshow-track">
-            <!-- Dynamisch gevuld door slideshow.js met 6 foto's (foto2.jpg t/m foto7.jpg) -->
+      <div class="section-wrap">
+        <div class="hero-header-grid">
+          <div class="hero-title-area">
+            <div class="hero-meta-top">
+              <span class="mono-tag">BERLIJN, DUITSLAND / VOOR CSD-STUDENTEN</span>
+              <span class="mono-tag">52°28' N · 13°24' E</span>
+            </div>
+            <h1>Tempelhofer<br>Feld.</h1>
+          </div>
+          <div class="hero-aside">
+            <p>Geen vliegtuigen meer. Wel alle ruimte voor nieuwe ideeën.</p>
+            <a href="#veld" class="btn-primary">
+              <span>Ontdek het veld</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grote Hero Foto met Floating Pill -->
+      <div class="hero-banner-image">
+        <img src="img/foto2.jpg" alt="Startbaan Tempelhofer Feld met weidse lucht" onerror="this.src='documenten/img/foto2.jpg'">
+        <div class="floating-pill">
+          <span>02 /</span> De landingsbaan is nu van iedereen.
+        </div>
+      </div>
+
+      <!-- Groene Stats Balk onder Hero -->
+      <div class="hero-stats-band">
+        <div>300+ hectare open ruimte</div>
+        <div>Gratis toegang</div>
+        <div>U6 → Paradestraße</div>
+        <div>November: 07:00–18:00</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTIE 01: HET VELD (Omschrijving & Timeline)
+         ============================================================ -->
+    <section class="section-intro-block section-wrap" id="veld">
+      <div class="section-top-label">
+        <span class="mono-tag">01 / HET VELD</span>
+      </div>
+
+      <div class="intro-two-cols">
+        <div class="intro-image-card">
+          <img src="img/foto3.jpg" alt="Panorama over de velden van Tempelhof" onerror="this.src='documenten/img/foto3.jpg'">
+          <div class="image-subcaption">
+            FOTO 01 · EEN HORIZON MIDDEN IN DE STAD
+          </div>
+        </div>
+
+        <div class="intro-text-side">
+          <h2>Van luchthaven naar vrije ruimte.</h2>
+          <p>
+            Tempelhofer Feld ligt midden in Berlijn en was vroeger een vliegveld. Sinds mei 2010 mag het terrein voor recreatie worden gebruikt. Het gebied is 300 hectare groot en zou ongeveer 420 voetbalvelden kunnen bevatten. Daarmee is het een van de grootste open ruimtes in een stad ter wereld. Op de oude start- en landingsbanen fiets, skate en wandel je nu.
+          </p>
+          <p>
+            Na de sluiting van het vliegveld kreeg de stad het enorme terrein terug, inclusief de oude terminal, veel hangars en de landingsbanen. Het park ligt tussen de wijken Tempelhof, Kreuzberg en Neukölln. De S-Bahn en U-Bahn zijn dichtbij, dus je bent er snel vanuit het centrum.
+          </p>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <h3>2008</h3>
+          <p>De luchthaven sluit definitief</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2010</h3>
+          <p>Het veld gaat open als publiek stadspark</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2011</h3>
+          <p>Start gemeenschapstuin Allmende-Kontor</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2014</h3>
+          <p>Berlijn kiest bij referendum voor behoud van het open veld</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTIE 02: WAAROM VOOR CSD? (Motivatie / Donkergroene Band)
+         ============================================================ -->
+    <section class="feature-band" id="csd">
+      <div class="section-wrap">
+        <div class="section-top-label">
+          <span class="mono-tag" style="color: rgba(255,255,255,0.6);">02 / WAAROM VOOR CSD?</span>
+        </div>
+
+        <div class="feature-top-flex">
+          <h2>Een openluchtlab voor jouw blik.</h2>
+          <div class="feature-top-right">
+            <p>
+              We kozen Tempelhofer Feld omdat het laat zien hoe Berlijn met zijn verleden omgaat. Op dezelfde plek waar ooit militairen exerceerden en vliegtuigen opstegen, ligt nu een park voor iedereen. Voor CSD-studenten is dit meer dan een groene pauze: je ziet hier hoe ruimtelijk ontwerp, visuele communicatie en dagelijks gebruik elkaar beïnvloeden. Neem je camera en schetsboek mee: het veld is een sterke plek voor visueel onderzoek.
+            </p>
+            <div class="mono-sub">MOTIVATIE: EIGEN ANALYSE · CONTEXT</div>
+          </div>
+        </div>
+
+        <div class="feature-three-cols">
+          <div class="feature-col">
+            <div class="col-tag">A /</div>
+            <h3>Lees de openbare ruimte</h3>
+            <p>Kijk hoe routes, borden en de oude belijning bezoekers richting geven. Wat is ontworpen, en wat ontstaat vanzelf?</p>
           </div>
 
-          <!-- Vorige knop -->
-          <button class="nav-btn prev-btn" id="prev-btn" aria-label="Vorige foto">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
+          <div class="feature-col">
+            <div class="col-tag">B /</div>
+            <h3>Zie hergebruik in actie</h3>
+            <p>Een landingsbaan wordt een plek om te skaten. Een tuin wordt een ontmoetingsplek. Verzamel voorbeelden van nieuwe functies voor bestaande ruimte.</p>
+          </div>
 
-          <!-- Volgende knop -->
-          <button class="nav-btn next-btn" id="next-btn" aria-label="Volgende foto">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Voortgangsbalk (3 seconden loop) -->
-        <div class="progress-container">
-          <div class="progress-bar" id="progress-bar"></div>
-        </div>
-
-        <!-- Onderbalk: Dots links & Pauze/Speel knop rechts -->
-        <div class="slideshow-controls">
-          <div class="dots-container" id="dots-container"></div>
-
-          <button class="control-btn" id="toggle-play-btn" aria-label="Pauzeer of speel slideshow">
-            <svg id="pause-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <svg id="play-icon" style="display:none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Pauze / Speel</span>
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="intro section-wrap">
-      <div class="section-topline"></div>
-      <div class="intro-columns">
-        <div class="intro-heading"></div>
-        <div class="intro-copy"></div>
-      </div>
-      <div class="timeline">
-        <div></div><div></div><div></div><div></div>
-      </div>
-    </section>
-
-    <section class="feature-band">
-      <div class="section-wrap">
-        <div class="feature-heading"></div>
-        <div class="feature-columns">
-          <div></div><div></div><div></div>
+          <div class="feature-col">
+            <div class="col-tag">C /</div>
+            <h3>Ontwerp met de stad</h3>
+            <p>Het behoud van het veld en de gemeenschapstuinen maken burgerparticipatie en duurzaamheid tastbaar. Wie mag de stad vormgeven?</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="gallery section-wrap">
-      <div class="section-heading">
-        <div></div>
-        <div></div>
+    <!-- ============================================================
+         SECTIE 03: IN BEELD (SLIDESHOW MET 6 FOTO'S & THUMBNAILS)
+         ============================================================ -->
+    <section class="gallery-section section-wrap" id="beeld">
+      <div class="section-top-label">
+        <span class="mono-tag">03 / IN BEELD</span>
       </div>
-      <div class="gallery-image"></div>
-      <div class="gallery-thumbnails">
-        <div></div><div></div><div></div><div></div>
+
+      <div class="gallery-header-flex">
+        <h2>Zes blikken op het veld.</h2>
+        <span class="mono-tag">SLIDESHOW · CONTINUOUS LOOP</span>
+      </div>
+
+      <!-- Slideshow Component -->
+      <div class="slideshow-block">
+        <!-- Viewport met slides -->
+        <div class="slideshow-viewport" id="gallery-viewport">
+          <div class="slideshow-track" id="gallery-track">
+            <!-- Dynamisch gevuld door slideshow.js met foto2.jpg t/m foto7.jpg -->
+          </div>
+
+          <!-- Caption Badge over de slide -->
+          <div class="slide-overlay-badge" id="slide-badge">
+            <strong>01/06</strong> Landingsbaan · De landingsbaan is nu van iedereen
+          </div>
+        </div>
+
+        <!-- 3-Seconden Voortgangsbalk -->
+        <div class="gallery-progress">
+          <div class="gallery-progress-bar" id="gallery-progress-bar"></div>
+        </div>
+
+        <!-- Controls balk onder de viewport -->
+        <div class="gallery-meta-controls">
+          <div>01 – 06 · Foto's van Tempelhofer Feld · Wisselt elke 3 sec</div>
+          <div class="gallery-nav-buttons">
+            <button class="icon-nav-btn" id="gallery-prev-btn" aria-label="Vorige foto">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button class="icon-nav-btn" id="gallery-next-btn" aria-label="Volgende foto">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 Thumbnails Onder de Slideshow -->
+        <div class="gallery-thumbnails-grid">
+          <div class="thumb-card active" data-index="0">
+            <img src="img/foto2.jpg" alt="01 Landingsbaan" onerror="this.src='documenten/img/foto2.jpg'">
+            <span>01 / Landingsbaan</span>
+          </div>
+          <div class="thumb-card" data-index="1">
+            <img src="img/foto3.jpg" alt="02 Panorama" onerror="this.src='documenten/img/foto3.jpg'">
+            <span>02 / Panorama</span>
+          </div>
+          <div class="thumb-card" data-index="2">
+            <img src="img/foto4.jpg" alt="03 Gemeenschapstuin" onerror="this.src='documenten/img/foto4.jpg'">
+            <span>03 / Gemeenschapstuin</span>
+          </div>
+          <div class="thumb-card" data-index="3">
+            <img src="img/foto5.jpg" alt="04 Groene paden" onerror="this.src='documenten/img/foto5.jpg'">
+            <span>04 / Groene paden</span>
+          </div>
+          <div class="thumb-card" data-index="4">
+            <img src="img/foto6.jpg" alt="05 Hergebruikt hout" onerror="this.src='documenten/img/foto6.jpg'">
+            <span>05 / Hergebruikt hout</span>
+          </div>
+          <div class="thumb-card" data-index="5">
+            <img src="img/foto7.jpg" alt="06 Het veld in mei" onerror="this.src='documenten/img/foto7.jpg'">
+            <span>06 / Het veld in mei</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="visit section-wrap">
-      <div class="visit-heading"></div>
-      <div class="visit-details">
-        <div></div><div></div><div></div>
+    <!-- ============================================================
+         SECTIE 04: PLAN JE BEZOEK (Praktische Informatie)
+         ============================================================ -->
+    <section class="visit-section section-wrap" id="bezoek">
+      <div class="section-top-label">
+        <span class="mono-tag">04 / PLAN JE BEZOEK</span>
+      </div>
+
+      <div class="visit-header-flex">
+        <h2>Veel ruimte. Geen entreeprijs.</h2>
+        <span class="mono-tag">BEZOEKINFORMATIE / NOVEMBER</span>
+      </div>
+
+      <div class="visit-cards-grid">
+        <!-- Kaart 01: Adres -->
+        <div class="visit-card">
+          <div class="card-num">01 — ADRES</div>
+          <h3>Ingang Paradestraße</h3>
+          <p><strong>Tempelhofer Damm, 12101 Berlin, Duitsland</strong></p>
+          <p>
+            Hoofdingang aan de westkant bij S- en U-Bahnstation Tempelhof, plus ingang bij Paradestraße. Dit is de ingang van het park, niet het luchthavengebouw.
+          </p>
+        </div>
+
+        <!-- Kaart 02: Openingstijden -->
+        <div class="visit-card">
+          <div class="card-num">02 — DAGELIJKS · NOVEMBER</div>
+          <div class="highlight-stat">07:00–18:00</div>
+          <p>
+            De openingstijden veranderen per seizoen (zomer tot 23:00, winter tot 17:00). Na sluitingstijd kun je het park verlaten via de draaihekken bij de hoofdingangen.
+          </p>
+        </div>
+
+        <!-- Kaart 03: Kosten -->
+        <div class="visit-card">
+          <div class="card-num">03 — KOSTEN</div>
+          <div class="highlight-stat">€ 0</div>
+          <p>
+            Het park is gratis toegankelijk voor iedereen. Rondleidingen in het historische luchthavengebouw staan los van het parkbezoek en zijn betaald.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tip Banner -->
+      <div class="tip-banner">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path>
+        </svg>
+        <span><strong>Onze tip:</strong> neem water, een winddichte laag en comfortabele schoenen mee. Het open veld is winderig en vraagt om een beetje voorbereiding.</span>
       </div>
     </section>
 
+    <!-- ============================================================
+         SECTIE 05: VAN MITTE NAAR HET VELD (Route)
+         ============================================================ -->
+    <section class="route-section section-wrap" id="route">
+      <div class="section-top-label">
+        <span class="mono-tag">05 / VAN HOTEL NAAR HET VELD</span>
+      </div>
+
+      <div class="route-top-grid">
+        <h2>Van Mitte naar de open horizon.</h2>
+        <div class="route-origin-card">
+          <span class="mono-tag">VERTREK / GENERATOR BERLIN MITTE</span>
+          <h4>Oranienburger Str. 65, 10117 Berlin</h4>
+          <div class="route-stat-badge">± 25–35 min · ± 7 km</div>
+          <p>Inclusief wachten – indicatieve schatting met het openbaar vervoer. Totale loopafstand is ongeveer 750 meter.</p>
+        </div>
+      </div>
+
+      <div class="route-steps-grid">
+        <!-- Stap 01 -->
+        <div class="route-step-card">
+          <div class="step-header-row">
+            <span class="step-num">01</span>
+            <span class="step-mode">LOPEN</span>
+          </div>
+          <h3>Hotel → Oranienburger Tor</h3>
+          <div class="step-sub">± 5 min · 350 m</div>
+          <p>Vertrek bij Generator Berlin Mitte en loop westwaarts naar het metrostation U Oranienburger Tor.</p>
+        </div>
+
+        <!-- Stap 02 -->
+        <div class="route-step-card">
+          <div class="step-header-row">
+            <span class="step-num">02</span>
+            <span class="step-mode">METRO U6</span>
+          </div>
+          <h3>Richting Alt-Mariendorf</h3>
+          <div class="step-sub">8 haltes · ± 12–15 min</div>
+          <p>Neem metrolijn U6 zonder overstap naar station Paradestraße of station Tempelhof.</p>
+        </div>
+
+        <!-- Stap 03 -->
+        <div class="route-step-card">
+          <div class="step-header-row">
+            <span class="step-num">03</span>
+            <span class="step-mode">LOPEN</span>
+          </div>
+          <h3>Paradestraße → het veld</h3>
+          <div class="step-sub">± 5 min · 400 m</div>
+          <p>Loop naar de parkingang Paradestraße aan de Tempelhofer Damm. Je komt aan de westkant het veld op.</p>
+        </div>
+      </div>
+
+      <!-- OV Alert Banner -->
+      <div class="alert-banner">
+        <span>!</span>
+        <p>Een OV-ticket (zone AB) is nodig. Bekijk het actuele BVG-tarief en controleer eventuele werkzaamheden vóór vertrek op bvg.de.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTIE 06: ORIËNTATIE & KAART (Placeholder)
+         ============================================================ -->
     <section class="map-section section-wrap">
-      <div class="section-heading">
-        <div></div>
-        <div></div>
+      <div class="section-top-label">
+        <span class="mono-tag">06 / ORIËNTATIE</span>
       </div>
-      <div class="map-panel"></div>
+
+      <div class="map-header-flex">
+        <h2>Zo ligt het veld in de stad.</h2>
+        <span class="mono-tag">STATISCHE KAART · GEEN LIVE ROUTE</span>
+      </div>
+
+      <div class="map-box">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+        </svg>
+        <p><strong>Interactieve kaart</strong> (wordt momenteel door Walid gekoppeld)</p>
+        <span class="mono-tag">U6 Paradestraße · Tempelhof · Kreuzberg · Neukölln</span>
+      </div>
     </section>
 
-    <section class="closing">
-      <div class="closing-image"></div>
-      <div class="closing-content">
-        <div></div>
-        <div></div>
-        <div></div>
+    <!-- ============================================================
+         SECTIE 07: ONDERZOEKSOPDRACHT
+         ============================================================ -->
+    <section class="closing-split">
+      <div class="closing-image-side">
+        <img src="img/foto6.jpg" alt="Hergebruikt hout en gemeenschapstuin Tempelhofer Feld" onerror="this.src='documenten/img/foto6.jpg'">
+      </div>
+
+      <div class="closing-text-side">
+        <span class="mono-tag">07 / NEEM JE BLIK MEE · EIGEN ANALYSE</span>
+        <h2>Kijken is ook een opdracht.</h2>
+        <p>
+          Maak van je bezoek een klein visueel onderzoek. Werk in duo's en leg vast hoe mensen hun weg vinden en de openbare ruimte gebruiken.
+        </p>
+
+        <div class="assignment-steps">
+          <div class="assignment-step">
+            <strong>01</strong>
+            <span>Fotografeer drie voorbeelden van wayfinding en spontane signalering.</span>
+          </div>
+          <div class="assignment-step">
+            <strong>02</strong>
+            <span>Observeer tien minuten één kruispunt van landingsbanen en wandelpaden.</span>
+          </div>
+          <div class="assignment-step">
+            <strong>03</strong>
+            <span>Schets één idee dat de plek duidelijker, interactiever of toegankelijker maakt.</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ============================================================
+       SITE FOOTER
+       ============================================================ -->
   <footer class="site-footer">
-    <div></div><div></div><div></div>
+    <div class="section-wrap">
+      <div class="footer-top">
+        <div>
+          <span class="mono-tag" style="color: rgba(255,255,255,0.6);">BERLIJN / BUITEN · CSD FIELD GUIDE</span>
+          <h2 style="margin-top: 10px;">Tot op het veld.</h2>
+        </div>
+
+        <div class="footer-col-right">
+          <div><strong>Groepsnaam:</strong> Waar is de Vierde?</div>
+          <div><strong>Teamleden:</strong> Mylene Zijlstra, Sultan Avdi, Walid Salhi, Sebastiaan Kuper</div>
+          <div><strong>Locatie:</strong> Tempelhofer Feld, Berlijn</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>BESTEMMING / TEMPELHOFER FELD</div>
+        <div>NEDERLANDSE EDITIE · 2026</div>
+      </div>
+    </div>
   </footer>
 
-  <!-- Slideshow JavaScript -->
+  <!-- Scripts -->
   <script src="slideshow.js"></script>
 </body>
 </html>

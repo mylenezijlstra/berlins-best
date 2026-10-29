@@ -1,91 +1,1044 @@
+/* ============================================================
+   BERLIJN / BUITEN - TEMPELHOFER FELD FIELD GUIDE
+   Design conform Stitch / Figma specificaties
+   ============================================================ */
+
 :root {
-  --paper: #f3f2e9;
-  --white: #fffef9;
+  --paper: #f4f3ec;
+  --white: #ffffff;
   --forest: #143b2b;
-  --green: #dce5d2;
-  --line: #cbd1c4;
+  --forest-dark: #0e2d20;
+  --green-accent: #234d38;
+  --green-light: #dce5d2;
+  --green-tag: #88997c;
+  --line: #d1d6c8;
+  --text-main: #141715;
+  --text-muted: #5a635a;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); }
-.site-header { min-height: 76px; padding: 0 6vw; display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; gap: 30px; background: var(--white); }
-.brand, .navigation, .header-action { height: 22px; background: var(--green); }
-.brand { width: 130px; }
-.navigation { width: min(390px, 100%); justify-self: center; }
-.header-action { width: 110px; justify-self: end; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.hero { min-height: min(670px, 78vw); height: 610px; display: flex; align-items: end; background: #87977a; }
-.hero-content { width: min(1120px, 88%); height: 100%; margin: auto; padding: 92px 0 52px; display: flex; flex-direction: column; justify-content: space-between; }
-.hero-title { width: min(600px, 75%); height: 190px; margin-top: 40px; background: rgba(243,242,233,.16); }
-.hero-bottom { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
-.hero-caption { width: 260px; height: 28px; background: rgba(243,242,233,.3); }
-.hero-action { width: 150px; height: 44px; border: 1px solid rgba(255,255,255,.55); }
+html {
+  scroll-behavior: smooth;
+}
 
-.section-wrap { width: min(1120px, 88%); margin: 0 auto; }
-.intro { padding-top: 82px; padding-bottom: 82px; }
-.section-topline { height: 18px; border-bottom: 1px solid var(--line); }
-.intro-columns { display: grid; grid-template-columns: 1.1fr .9fr; gap: 9%; padding: 50px 0 42px; }
-.intro-heading, .intro-copy { min-height: 150px; background: var(--green); }
-.timeline { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
-.timeline div { height: 56px; margin-right: 12px; border-bottom: 1px solid var(--line); }
+body {
+  font-family: var(--font-sans);
+  background-color: var(--paper);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
-.feature-band { padding: 82px 6vw 76px; background: var(--forest); }
-.feature-heading { width: min(560px, 80%); height: 110px; margin-bottom: 40px; background: rgba(243,242,233,.13); }
-.feature-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-.feature-columns div { height: 70px; border-top: 1px solid rgba(255,255,255,.3); }
+/* Algemene Typografie & Utility */
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
 
-.gallery { padding-top: 82px; padding-bottom: 86px; }
-.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 27px; }
-.section-heading div:first-child { width: 48%; height: 72px; background: var(--green); }
-.section-heading div:last-child { width: 28%; height: 46px; background: var(--green); }
-.gallery-image { height: clamp(250px, 42vw, 470px); background: #c5cdb9; }
-.gallery-thumbnails { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
-.gallery-thumbnails div { height: clamp(88px, 13vw, 145px); background: var(--green); }
+.section-wrap {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
 
-.visit { display: grid; grid-template-columns: .8fr 1.2fr; gap: 12%; padding-top: 74px; padding-bottom: 80px; border-top: 1px solid var(--line); }
-.visit-heading { min-height: 180px; background: var(--green); }
-.visit-details { border-top: 1px solid var(--line); }
-.visit-details div { height: 76px; border-bottom: 1px solid var(--line); }
+/* ============================================================
+   SITE HEADER & HAMBURGER MENU
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 72px;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
 
-.map-section { padding-top: 12px; padding-bottom: 82px; }
-.map-panel { height: 360px; background-color: #e7e9dc; background-image: linear-gradient(rgba(67,100,75,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(67,100,75,.08) 1px, transparent 1px); background-size: 38px 38px; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
 
-.closing { display: grid; grid-template-columns: 1fr 1fr; min-height: 360px; background: var(--forest); }
-.closing-image { min-height: 320px; background: #71876f; }
-.closing-content { align-self: center; padding: 54px clamp(35px, 8vw, 115px); }
-.closing-content div { height: 34px; margin: 14px 0; background: rgba(243,242,233,.16); }
-.closing-content div:first-child { width: 75%; height: 78px; }
-.closing-content div:last-child { width: 145px; height: 44px; border: 1px solid rgba(255,255,255,.5); background: transparent; }
-.site-footer { min-height: 96px; padding: 23px 6vw; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 24px; background: #0e2d20; }
-.site-footer div { height: 20px; background: rgba(243,242,233,.14); }
-.site-footer div:first-child { width: 130px; }
-.site-footer div:last-child { width: 110px; justify-self: end; }
+.brand-icon {
+  width: 14px;
+  height: 20px;
+  background-color: var(--forest);
+  border-radius: 2px;
+}
 
-@media (max-width: 720px) {
-  .site-header { min-height: 66px; grid-template-columns: 1fr auto; padding: 0 6%; }
-  .navigation { display: none; }
-  .hero { height: min(650px, 82svh); min-height: 490px; }
-  .hero-content { width: 88%; padding: 74px 0 48px; }
-  .hero-title { width: 90%; height: 155px; }
-  .hero-bottom { align-items: start; flex-direction: column; gap: 20px; }
-  .intro, .gallery { padding-top: 60px; padding-bottom: 62px; }
-  .intro-columns { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
-  .intro-heading, .intro-copy { min-height: 100px; }
-  .timeline { grid-template-columns: repeat(2, 1fr); row-gap: 18px; }
-  .feature-band { padding: 61px 6% 55px; }
-  .feature-columns { grid-template-columns: 1fr; gap: 12px; }
-  .feature-columns div { height: 45px; }
-  .section-heading { align-items: start; flex-direction: column; gap: 12px; }
-  .section-heading div:first-child { width: 75%; }
-  .section-heading div:last-child { width: 55%; }
-  .gallery-thumbnails { grid-template-columns: repeat(2, 1fr); }
-  .gallery-thumbnails div { height: 120px; }
-  .visit { grid-template-columns: 1fr; gap: 28px; padding-top: 58px; padding-bottom: 62px; }
-  .visit-heading { min-height: 130px; }
-  .map-section { padding-bottom: 60px; }
-  .map-panel { height: 290px; }
-  .closing { grid-template-columns: 1fr; }
-  .closing-image { min-height: 240px; }
-  .closing-content { padding: 43px 7% 50px; }
-  .site-footer { grid-template-columns: 1fr 1fr; padding: 25px 6%; }
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+  color: var(--forest);
+}
+
+.header-action {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* Hamburger Knop (standaard verborgen op desktop) */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text-main);
+  z-index: 101;
+}
+
+.hamburger-btn svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* Mobiel Menu Drawer */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 2px solid var(--forest);
+  padding: 1.5rem 6vw 2rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 99;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ============================================================
+   HERO SECTIE
+   ============================================================ */
+.hero {
+  padding: 50px 0 0;
+  background: var(--paper);
+}
+
+.hero-header-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.hero-title-area {
+  flex: 1 1 60%;
+}
+
+.hero-meta-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7.5vw, 6.2rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+}
+
+.hero-aside {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.hero-aside p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--text-main);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--forest);
+  color: #ffffff;
+  padding: 0.85rem 1.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: #1b4d38;
+  transform: translateY(-1px);
+}
+
+.hero-banner-image {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 50vw, 560px);
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+}
+
+.hero-banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.floating-pill {
+  position: absolute;
+  bottom: 24px;
+  left: 5vw;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-main);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.floating-pill span {
+  color: #c2410c;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* Groene Stats Balk onder Hero */
+.hero-stats-band {
+  background: #39634b;
+  color: #ffffff;
+  padding: 1.2rem 5vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.hero-stats-band div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================================
+   SECTIE 01: HET VELD (Omschrijving & Timeline)
+   ============================================================ */
+.section-intro-block {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-top-label {
+  margin-bottom: 24px;
+}
+
+.intro-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.intro-image-card {
+  position: relative;
+}
+
+.intro-image-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.image-subcaption {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.intro-text-side h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.75rem;
+}
+
+.intro-text-side p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* Timeline */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-item h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--forest);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-item p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   SECTIE 02: WAAROM VOOR CSD? (Donkergroene Band)
+   ============================================================ */
+.feature-band {
+  background: var(--forest);
+  color: #ffffff;
+  padding: 100px 0;
+}
+
+.feature-top-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.feature-top-flex h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  flex: 1 1 50%;
+}
+
+.feature-top-right {
+  flex: 1 1 50%;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.feature-top-right .mono-sub {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.feature-three-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.feature-col {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 24px;
+}
+
+.col-tag {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.feature-col h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.feature-col p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ============================================================
+   SECTIE 03: IN BEELD (SLIDESHOW MET 6 THUMBNAILS)
+   ============================================================ */
+.gallery-section {
+  padding: 90px 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.gallery-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.gallery-header-flex h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+/* Slideshow Container */
+.slideshow-block {
+  position: relative;
+  width: 100%;
+}
+
+.slideshow-viewport {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 48vw, 580px);
+  background: #111;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+.slideshow-viewport:active {
+  cursor: grabbing;
+}
+
+.slideshow-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slide Caption Badge op de foto */
+.slide-overlay-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-main);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.slide-overlay-badge strong {
+  color: var(--forest);
+  margin-right: 6px;
+}
+
+/* Voortgangsbalkje */
+.gallery-progress {
+  width: 100%;
+  height: 3px;
+  background: var(--line);
+  margin-top: 14px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.gallery-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--forest);
+  transition: width 0.05s linear;
+}
+
+/* Controls onder de foto: credits links, pijlen rechts */
+.gallery-meta-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.gallery-nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-nav-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--text-main);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-nav-btn:hover {
+  background: var(--forest);
+  color: #ffffff;
+  border-color: var(--forest);
+}
+
+.icon-nav-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* 6 Thumbnails Onder de Slideshow */
+.gallery-thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.thumb-card {
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.thumb-card.active {
+  border-color: var(--forest);
+}
+
+.thumb-card:hover {
+  transform: translateY(-2px);
+}
+
+.thumb-card img {
+  width: 100%;
+  height: 85px;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-card span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding: 6px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================================
+   SECTIE 04: PLAN JE BEZOEK (Praktische Informatie)
+   ============================================================ */
+.visit-section {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.visit-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.visit-header-flex h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.visit-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-bottom: 40px;
+}
+
+.visit-card {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.visit-card .card-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.visit-card h3 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.visit-card .highlight-stat {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.visit-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+
+/* Tip Banner */
+.tip-banner {
+  background: #ebe9dd;
+  border: 1px solid var(--line);
+  padding: 1.25rem 1.75rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.tip-banner svg {
+  width: 20px;
+  height: 20px;
+  color: #c2410c;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SECTIE 05: VAN MITTE NAAR HET VELD (Routebeschrijving)
+   ============================================================ */
+.route-section {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.route-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.route-top-grid h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.route-origin-card {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.route-origin-card h4 {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.route-stat-badge {
+  display: inline-block;
+  margin: 10px 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--forest);
+  font-size: 1.15rem;
+}
+
+.route-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.route-step-card {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.step-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.step-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--forest);
+}
+
+.step-mode {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: #e3e6db;
+  padding: 2px 8px;
+  border-radius: 2px;
+  color: var(--forest);
+  font-weight: 600;
+}
+
+.route-step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.step-sub {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.route-step-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.alert-banner {
+  background: #fbfbf7;
+  border: 1px solid var(--line);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.alert-banner span {
+  font-weight: 700;
+  color: #b45309;
+}
+
+/* ============================================================
+   SECTIE 06: ORIËNTATIE & KAART (Placeholder)
+   ============================================================ */
+.map-section {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.map-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.map-header-flex h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.map-box {
+  width: 100%;
+  height: 420px;
+  background-color: #e5e8db;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-muted);
+  background-image: 
+    linear-gradient(rgba(20, 59, 43, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 59, 43, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.map-box svg {
+  width: 48px;
+  height: 48px;
+  color: var(--forest);
+  opacity: 0.6;
+}
+
+/* ============================================================
+   SECTIE 07: ONDERZOEKSOPDRACHT (Closing)
+   ============================================================ */
+.closing-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 540px;
+  background: #e9ece0;
+  border-bottom: 1px solid var(--line);
+}
+
+.closing-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.closing-text-side {
+  padding: 70px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.closing-text-side h2 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 12px 0 16px;
+}
+
+.closing-text-side p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.assignment-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.assignment-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.assignment-step strong {
+  font-family: var(--font-mono);
+  color: var(--forest);
+}
+
+/* ============================================================
+   SITE FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--forest-dark);
+  color: #ffffff;
+  padding: 80px 6vw 40px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-top h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.footer-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-col-right strong {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================================
+   RESPONSIVENESS (TABLET & MOBIEL)
+   ============================================================ */
+@media (max-width: 900px) {
+  .site-header .navigation,
+  .site-header .header-action {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .hero-header-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-aside {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .hero-stats-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro-two-cols {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-top-flex {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .feature-three-cols {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .gallery-thumbnails-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .visit-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .route-top-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .route-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .closing-split {
+    grid-template-columns: 1fr;
+  }
+
+  .closing-image-side {
+    height: 300px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-stats-band {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-thumbnails-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
