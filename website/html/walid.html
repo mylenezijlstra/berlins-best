@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tempelhofer Feld - Berlin's Best</title>
+  <meta name="description" content="Informatie, routebeschrijving vanaf hotel en kaart van Tempelhofer Feld in Berlijn.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/walid.css">
+</head>
+<body>
+
+  <main class="page-container">
+    
+    <!-- Header -->
+    <header class="page-header">
+      <span class="sub-badge">Berlin's Best — CSD Studiereis (2-5 november)</span>
+      <h1 class="page-title">Tempelhofer Feld</h1>
+      
+      <div class="meta-strip">
+        <div class="meta-item">
+          <span class="meta-label">Afstand vanaf hotel</span>
+          <span class="meta-value">4,7 km</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Openingstijden</span>
+          <span class="meta-value">07:00 – 18:00 uur</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Toegangsprijs</span>
+          <span class="meta-value text-green">Gratis (€0)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Grid -->
+    <div class="main-layout">
+      
+      <!-- Linkerzijde: Informatie & Route -->
+      <div class="info-column">
+        
+        <!-- Informatie -->
+        <section class="content-box">
+          <h2 class="box-heading">Over de locatie</h2>
+          <p class="body-text">
+            Tempelhofer Feld is een groot openbaar park op het terrein van een voormalig vliegveld in Berlijn. Tegenwoordig is het een populaire plek om te wandelen, te fietsen, te sporten en te ontspannen.
+          </p>
+          
+          <div class="csd-box">
+            <h3 class="csd-title">Waarom interessant voor CSD-studenten:</h3>
+            <p class="body-text">
+              Tempelhofer Feld is interessant voor CSD-studenten omdat het een grote, open en toegankelijke locatie is waar je kunt ontspannen, samen activiteiten kunt doen en de bijzondere geschiedenis van Berlijn kunt ontdekken.
+            </p>
+          </div>
+        </section>
+
+        <!-- Routebeschrijving met grote tijden -->
+        <section class="content-box">
+          <div class="route-header">
+            <h2 class="box-heading">Route vanaf het hotel</h2>
+            <p class="hotel-note">Vertrek: Friedrichstadt-Palast (Friedrichstraße 107)</p>
+          </div>
+
+          <div class="travel-cards">
+            
+            <!-- Metro -->
+            <div class="travel-card highlighted">
+              <div class="time-block">
+                <span class="time-number">15</span>
+                <span class="time-unit">minuten</span>
+              </div>
+              <div class="travel-info">
+                <span class="travel-name">Metro U6 (Snelste route)</span>
+                <p>Loop 100 meter naar station <strong>U Oranienburger Tor</strong> en pak directe lijn <strong>U6</strong> naar <strong>U Platz der Luftbrücke</strong>. Je hoeft niet over te stappen.</p>
+              </div>
+            </div>
+
+            <!-- Fiets -->
+            <div class="travel-card">
+              <div class="time-block">
+                <span class="time-number">20</span>
+                <span class="time-unit">minuten</span>
+              </div>
+              <div class="travel-info">
+                <span class="travel-name">Fiets of deelstep</span>
+                <p>Ongeveer 4,7 km rechtuit over de Friedrichstraße en de Mehringdamm. Fietsen over de landingsbaan is toegestaan.</p>
+              </div>
+            </div>
+
+            <!-- Lopen en Taxi compact -->
+            <div class="travel-compact-row">
+              <div class="compact-item">
+                <span class="compact-time">55 min</span>
+                <span class="compact-label">Wandelen (4,7 km)</span>
+              </div>
+              <div class="compact-item">
+                <span class="compact-time">15 min</span>
+                <span class="compact-label">Taxi / Uber (~€15)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <a href="https://www.google.com/maps/dir/Friedrichstra%C3%9Fe+107,+10117+Berlin/Tempelhofer+Feld,+Berlin" target="_blank" rel="noopener noreferrer" class="route-btn">
+            Route openen in Google Maps &rarr;
+          </a>
+        </section>
+
+      </div>
+
+      <!-- Rechterzijde: Google Maps Kaart -->
+      <div class="map-column">
+        <section class="content-box map-wrapper">
+          <div class="map-bar">
+            <h2 class="box-heading">Kaart Tempelhofer Feld</h2>
+            <div class="map-toggle-group">
+              <button class="toggle-btn active" id="btn-view-feld">Standaard</button>
+              <button class="toggle-btn" id="btn-view-sat">Satelliet</button>
+            </div>
+          </div>
+
+          <div class="iframe-holder">
+            <iframe 
+              id="google-maps-frame"
+              title="Google Maps kaart van Tempelhofer Feld"
+              src="https://maps.google.com/maps?q=Tempelhofer%20Feld%2C%20Berlin&amp;hl=nl&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              width="100%" 
+              height="390" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="map-footer">
+            <p>Voormalige luchthaven Berlijn-Tempelhof &bull; 355 hectare park</p>
+            <a href="https://www.google.com/maps/place/Tempelhofer+Feld" target="_blank" rel="noopener noreferrer" class="link-gmaps">
+              Open in Google Maps
+            </a>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="../js/walid.js"></script>
+</body>
+</html>
