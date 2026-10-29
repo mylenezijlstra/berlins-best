@@ -16,22 +16,15 @@
   --transition-speed: 0.5s;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 1rem;
-  overflow-x: hidden;
+/* Pas de hero sectie aan zodat de slideshow er perfect in past */
+.hero {
+  min-height: 560px;
+  height: auto !important;
+  padding: 40px 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--white, #ffffff) !important;
 }
 
 /* Slideshow Container */
@@ -39,11 +32,13 @@ body {
   position: relative;
   width: 100%;
   max-width: 900px;
+  margin: 0 auto;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Viewport & Track */
