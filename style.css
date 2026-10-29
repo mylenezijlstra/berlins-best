@@ -1,0 +1,232 @@
+/* ============================================================
+   BERLIN'S BEST - MINIMALISTISCHE WITTE & GRIJZE SLIDESHOW
+   ============================================================ */
+
+:root {
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --accent-color: #9ca3af;
+  --accent-active: #111827;
+  --btn-bg: rgba(0, 0, 0, 0.55);
+  --btn-border: rgba(255, 255, 255, 0.25);
+  --btn-hover: rgba(0, 0, 0, 0.8);
+  --transition-speed: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  overflow-x: hidden;
+}
+
+/* Slideshow Container */
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Viewport & Track */
+.slideshow-viewport {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+  user-select: none;
+  cursor: grab;
+}
+
+.slideshow-viewport:active {
+  cursor: grabbing;
+}
+
+.slideshow-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* Navigatie Pijlknoppen op de afbeelding */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.nav-btn:hover {
+  background: var(--btn-hover);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.nav-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+}
+
+.nav-btn.prev-btn {
+  left: 14px;
+}
+
+.nav-btn.next-btn {
+  right: 14px;
+}
+
+/* Voortgangsbalk (3 seconden loop) */
+.progress-container {
+  width: 100%;
+  height: 3px;
+  background: #f3f4f6;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.85rem;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4b5563;
+  border-radius: 2px;
+  transition: width 0.05s linear;
+}
+
+/* Controls onderaan: Dots links, Pauze/Speel rechts */
+.slideshow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.85rem;
+  padding: 0 0.25rem;
+}
+
+.dots-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.dot:hover {
+  background: #9ca3af;
+}
+
+.dot.active {
+  background: var(--accent-active);
+  width: 24px;
+  border-radius: 8px;
+}
+
+.control-btn {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.control-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Responsiveness voor kleinere schermen */
+@media (max-width: 640px) {
+  .slideshow-viewport {
+    height: 300px;
+  }
+
+  .nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .slideshow-wrapper {
+    padding: 0.75rem;
+    border-radius: 16px;
+  }
+}
