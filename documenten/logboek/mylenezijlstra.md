@@ -20,15 +20,19 @@ Staat in documenten en dan groepsafspraken.
 - Groepsnaam en link doorgegeven aan de docent op [8-10-2026].
 
 ### Wat ging goed / wat was lastig
-- ging best goed alleen sebastiaan niet aanwezig. 
+- Ging best goed alleen sebastiaan niet aanwezig. 
 
 
 ### Individueel onderzoek (`onderzoek/mylenezijlstra.md`)
-- staat in documenten/onderzoek/mylenezijlstra.md 
+- Staat in documenten/onderzoek/mylenezijlstra.md 
 
 ### design gemaakt 
-- stitch ai design gemaakt: https://stitch.google.com/projects/12814080654007016369?pli=1 
+- Stitch ai design gemaakt: https://stitch.google.com/projects/12814080654007016369?pli=1 
 
 
 ## Week [2] – [niet aanwezig deze dag (is gemeld) dus later die week gemaakt]
-- document met alle praktische informatie geschreven
+- Document met alle praktische informatie geschreven
+
+## Week [3] – [29-10-2026]
+- heb al mijn delen af en sebastiaan was niet aanwezig, dus heb het onderdeel wat sebastiaan moest doen gemaakt.
+Ik heb een slideshow met javascript, css en html gemaakt. Een basic slideshow die om de 3 seconden door gaat en je kan hem handmatig doorscrollen. Ook als je je muis op de foto houd blijft die stil. 
