@@ -29,3 +29,6 @@ Staat in documenten en dan groepsafspraken.
 ### design gemaakt 
 - stitch ai design gemaakt: https://stitch.google.com/projects/12814080654007016369?pli=1 
 
+
+## Week [2] – [niet aanwezig deze dag (is gemeld) dus later die week gemaakt]
+- document met alle praktische informatie geschreven
