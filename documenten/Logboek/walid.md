@@ -18,7 +18,7 @@ Sebastiaan was er vorige week niet dus heb hem een taak gegeven zodat hij aan he
 Iedereen kan aan de slag met zijn taak voor de website.
 
 
-dag 2: 15-10-2026
+dag 3: 30-10-2026
 
 Vandaag zijn we begonnen met een stand-up en taken verdeeld
 ik heb mijn taak afgemaakt. routes en map heb ik gemaakt.
